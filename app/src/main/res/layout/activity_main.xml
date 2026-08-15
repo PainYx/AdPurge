@@ -218,7 +218,6 @@
                 android:paddingEnd="16dp">
 
                 <ImageView
-                    android:id="@+id/ivFeatureIcon"
                     android:layout_width="36dp"
                     android:layout_height="36dp"
                     android:background="@drawable/bg_feature_icon"
@@ -234,7 +233,6 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/tvFeatureTitle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="关于"
@@ -243,7 +241,6 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/tvFeatureDesc"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="1dp"
