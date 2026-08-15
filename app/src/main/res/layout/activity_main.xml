@@ -11,7 +11,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <!-- Compact MD3 top app bar. Existing IDs are preserved. -->
         <LinearLayout
             android:id="@+id/llBrandHeader"
             android:layout_width="match_parent"
@@ -19,9 +18,9 @@
             android:gravity="center_vertical"
             android:orientation="horizontal"
             android:paddingStart="20dp"
-            android:paddingTop="14dp"
+            android:paddingTop="12dp"
             android:paddingEnd="8dp"
-            android:paddingBottom="10dp">
+            android:paddingBottom="8dp">
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -36,13 +35,13 @@
                     android:letterSpacing="0.01"
                     android:text="@string/app_name"
                     android:textColor="@color/text_primary"
-                    android:textSize="25sp"
+                    android:textSize="26sp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
+                    android:layout_marginTop="1dp"
                     android:text="APK 广告清理与权限管理"
                     android:textColor="@color/text_secondary"
                     android:textSize="12sp" />
@@ -51,7 +50,7 @@
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="wrap_content"
-                android:layout_height="48dp"
+                android:layout_height="44dp"
                 android:background="@android:color/transparent"
                 app:contentInsetEnd="0dp"
                 app:contentInsetStart="0dp"
@@ -59,46 +58,44 @@
                 app:title="" />
         </LinearLayout>
 
-        <!-- Primary action: still cardRemoveAds, with the same child IDs used by MainActivity. -->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardRemoveAds"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="6dp"
+            android:layout_marginTop="5dp"
             android:layout_marginEnd="20dp"
             android:clickable="true"
             android:focusable="true"
             app:cardBackgroundColor="@color/primary_container"
             app:cardCornerRadius="24dp"
             app:cardElevation="0dp"
-            app:strokeColor="@color/primary_dark"
-            app:strokeWidth="1dp">
+            app:strokeWidth="0dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
-                android:minHeight="92dp"
+                android:minHeight="86dp"
                 android:orientation="horizontal"
-                android:paddingStart="18dp"
-                android:paddingTop="14dp"
-                android:paddingEnd="18dp"
-                android:paddingBottom="14dp">
+                android:paddingStart="16dp"
+                android:paddingTop="12dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="12dp">
 
                 <ImageView
                     android:id="@+id/ivFeatureIcon"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
                     android:background="@drawable/bg_feature_icon"
                     android:contentDescription="@string/app_name"
-                    android:padding="13dp"
+                    android:padding="11dp"
                     android:src="@android:drawable/ic_menu_edit" />
 
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="14dp"
+                    android:layout_marginStart="13dp"
                     android:layout_weight="1"
                     android:orientation="vertical">
 
@@ -108,24 +105,28 @@
                         android:layout_height="wrap_content"
                         android:text="一键去广告"
                         android:textColor="@color/on_primary_container"
-                        android:textSize="18sp"
+                        android:textSize="17sp"
                         android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/tvFeatureDesc"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
+                        android:layout_marginTop="3dp"
                         android:maxLines="2"
-                        android:text="DEX直接修补\nManifest与SDK清理"
+                        android:text="DEX直接修补&#10;Manifest与SDK清理"
                         android:textColor="@color/on_primary_container"
-                        android:textSize="12sp" />
+                        android:textSize="11.5sp" />
                 </LinearLayout>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
+                    android:gravity="center"
+                    android:minHeight="40dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="4dp"
                     android:text="开始  ›"
                     android:textColor="@color/on_primary_container"
                     android:textSize="13sp"
@@ -137,23 +138,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="22dp"
-            android:layout_marginTop="14dp"
-            android:layout_marginBottom="2dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="1dp"
+            android:letterSpacing="0.08"
             android:text="工具"
             android:textColor="@color/text_secondary"
             android:textSize="12sp"
-            android:textStyle="bold"
-            android:letterSpacing="0.08" />
+            android:textStyle="bold" />
 
-        <!-- Six secondary tools. IDs and include structure are retained. -->
         <GridLayout
             android:id="@+id/glFeatures"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:alignmentMode="alignMargins"
             android:columnCount="2"
-            android:paddingStart="14dp"
-            android:paddingEnd="14dp"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
             android:useDefaultMargins="false">
 
             <include
@@ -193,7 +193,6 @@
                 android:layout_columnWeight="1" />
         </GridLayout>
 
-        <!-- About is deliberately lower-emphasis, but still uses the original cardAbout ID and child IDs. -->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardAbout"
             android:layout_width="match_parent"
@@ -211,24 +210,24 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="64dp"
+                android:layout_height="58dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:paddingStart="14dp"
-                android:paddingEnd="16dp">
+                android:paddingStart="13dp"
+                android:paddingEnd="15dp">
 
                 <ImageView
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
                     android:background="@drawable/bg_feature_icon"
                     android:contentDescription="@string/app_name"
-                    android:padding="9dp"
+                    android:padding="8dp"
                     android:src="@android:drawable/ic_menu_info_details" />
 
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="12dp"
+                    android:layout_marginStart="11dp"
                     android:layout_weight="1"
                     android:orientation="vertical">
 
@@ -244,10 +243,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="1dp"
-                        android:maxLines="2"
+                        android:maxLines="1"
                         android:text="版本信息 · 更新检测"
                         android:textColor="@color/text_secondary"
-                        android:textSize="11sp" />
+                        android:textSize="10.5sp" />
                 </LinearLayout>
 
                 <TextView
@@ -264,9 +263,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="20dp"
-            android:layout_marginBottom="7dp"
+            android:layout_marginBottom="6dp"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
@@ -285,13 +284,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_card_tech"
-                android:paddingStart="11dp"
-                android:paddingTop="6dp"
-                android:paddingEnd="11dp"
-                android:paddingBottom="6dp"
+                android:paddingStart="10dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="5dp"
                 android:text="复制日志"
                 android:textColor="@color/text_secondary"
-                android:textSize="11sp" />
+                android:textSize="10.5sp" />
         </LinearLayout>
 
         <com.google.android.material.card.MaterialCardView
@@ -299,10 +298,10 @@
             android:layout_height="0dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
-            android:layout_marginBottom="14dp"
+            android:layout_marginBottom="12dp"
             android:layout_weight="1"
             app:cardBackgroundColor="@color/bg_card"
-            app:cardCornerRadius="20dp"
+            app:cardCornerRadius="18dp"
             app:cardElevation="0dp"
             app:strokeColor="@color/card_border"
             app:strokeWidth="1dp">
@@ -319,12 +318,12 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="monospace"
                     android:lineSpacingExtra="1dp"
-                    android:padding="16dp"
+                    android:padding="14dp"
                     android:scrollbars="vertical"
                     android:text="点击上方“一键去广告”卡片选择 APK 开始处理。"
                     android:textColor="@color/text_secondary"
                     android:textIsSelectable="true"
-                    android:textSize="12sp" />
+                    android:textSize="11.5sp" />
             </ScrollView>
         </com.google.android.material.card.MaterialCardView>
     </LinearLayout>
