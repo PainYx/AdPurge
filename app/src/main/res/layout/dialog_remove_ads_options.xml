@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/dialogTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="一键去广告"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_primary" />
+
+    <TextView
+        android:id="@+id/dialogMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="请选择在去除广告的同时，是否一并去除运行环境检测与 Manifest 广告声明："
+        android:textSize="13sp"
+        android:textColor="@color/text_secondary"
+        android:lineSpacingExtra="2dp" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/swVpn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:checked="true"
+        android:text="去除 VPN 检测"
+        android:textColor="@color/text_primary"
+        android:textSize="15sp"
+        app:trackTint="@color/primary"
+        app:thumbTint="@color/text_on_primary" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/swEmulator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:checked="true"
+        android:text="去除虚拟机检测"
+        android:textColor="@color/text_primary"
+        android:textSize="15sp"
+        app:trackTint="@color/primary"
+        app:thumbTint="@color/text_on_primary" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/swManifest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:checked="true"
+        android:text="清理 Manifest 广告权限"
+        android:textColor="@color/text_primary"
+        android:textSize="15sp"
+        app:trackTint="@color/primary"
+        app:thumbTint="@color/text_on_primary" />
+
+<androidx.appcompat.widget.SwitchCompat
+         android:id="@+id/swSignature"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="10dp"
+         android:checked="true"
+         android:text="去除签名校验（处理后会重签名，绕过自校验防闪退）"
+         android:textColor="@color/text_primary"
+         android:textSize="15sp"
+         app:trackTint="@color/primary"
+         app:thumbTint="@color/text_on_primary" />
+
+     <androidx.appcompat.widget.SwitchCompat
+         android:id="@+id/swAssets"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="10dp"
+         android:checked="true"
+         android:text="清理 assets 广告文件"
+         android:textColor="@color/text_primary"
+         android:textSize="15sp"
+         app:trackTint="@color/primary"
+         app:thumbTint="@color/text_on_primary" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:orientation="horizontal"
+        android:gravity="end">
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Widget.Material3.Button.TextButton"
+            android:id="@+id/btnCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="88dp"
+            android:text="取消"
+            android:textColor="@color/text_secondary"
+            android:textSize="14sp"
+            android:backgroundTint="@android:color/transparent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:minWidth="88dp"
+            android:text="开始"
+            android:textColor="@color/text_on_primary"
+            android:textSize="14sp"
+            android:backgroundTint="@color/primary" />
+    </LinearLayout>
+
+</LinearLayout>

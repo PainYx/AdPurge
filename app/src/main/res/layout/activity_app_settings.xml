@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_page">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/bg_page"
+            app:title="应用设置"
+            app:titleTextColor="@color/text_primary"
+            app:subtitle="自定义保存路径与字体颜色"
+            app:subtitleTextColor="@color/text_secondary" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+                           
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="@color/bg_card"
+            app:strokeColor="@color/card_border"
+            app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/tvPathTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="处理文件保存路径"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:textColor="@color/text_primary" />
+
+                    <TextView
+                        android:id="@+id/tvPathDesc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:textSize="12sp"
+                        android:textColor="@color/text_secondary"
+                        android:text="处理完成后的 APK 将保存到该目录" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:hint="保存路径"
+                        app:startIconDrawable="@android:drawable/ic_menu_save">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etExportDir"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textUri"
+                            android:textSize="13sp"
+                            android:textColor="@color/text_primary" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:id="@+id/tvDirHint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:textSize="11sp"
+                        android:textColor="@color/text_hint"
+                        android:text="例如: /storage/emulated/0/APKEditor" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSavePath"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="保存路径"
+                        app:icon="@android:drawable/ic_menu_save"
+                        app:iconSize="18dp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+                           
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="@color/bg_card"
+            app:strokeColor="@color/card_border"
+            app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/tvColorTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="日志字体颜色"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:textColor="@color/text_primary" />
+
+                    <TextView
+                        android:id="@+id/tvColorDesc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:textSize="12sp"
+                        android:textColor="@color/text_secondary"
+                        android:text="选择处理日志文字的颜色" />
+
+                    <TextView
+                        android:id="@+id/tvColorPreview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:padding="12dp"
+                        android:background="@drawable/bg_card_tech"
+                        android:text="处理日志示例文字颜色"
+                        android:textSize="14sp" />
+
+                    <LinearLayout
+                        android:id="@+id/llColorOptions"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:orientation="horizontal" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+             <!-- ★ v3.1 处理选项开关 -->
+             <com.google.android.material.card.MaterialCardView
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_marginBottom="12dp"
+                 app:cardCornerRadius="20dp"
+                 app:cardElevation="0dp"
+                 app:cardBackgroundColor="@color/bg_card"
+            app:strokeColor="@color/card_border"
+            app:strokeWidth="1dp">
+
+                 <LinearLayout
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:orientation="vertical"
+                     android:padding="16dp">
+
+                     <TextView
+                         android:id="@+id/tvProcessingTitle"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:text="处理选项"
+                         android:textStyle="bold"
+                         android:textSize="16sp"
+                         android:textColor="@color/text_primary" />
+
+                     <TextView
+                         android:id="@+id/tvProcessingDesc"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:layout_marginTop="4dp"
+                         android:textSize="12sp"
+                         android:textColor="@color/text_secondary"
+                         android:text="控制去广告处理的行为，修改后即时生效" />
+
+                     <androidx.appcompat.widget.SwitchCompat
+                         android:id="@+id/swParallel"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_marginTop="10dp"
+                         android:checked="true"
+                         android:text="双线程并行修补 DEX（内存充足时自动启用）"
+                         android:textColor="@color/text_primary"
+                         android:textSize="14sp"
+                         app:trackTint="@color/primary"
+                         app:thumbTint="@color/white" />
+
+                     <androidx.appcompat.widget.SwitchCompat
+                         android:id="@+id/swDropDebugInfo"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_marginTop="10dp"
+                         android:checked="true"
+                         android:text="丢弃调试信息（提速写盘，处理后崩溃日志无行号）"
+                         android:textColor="@color/text_primary"
+                         android:textSize="14sp"
+                         app:trackTint="@color/primary"
+                         app:thumbTint="@color/white" />
+
+                     <androidx.appcompat.widget.SwitchCompat
+                         android:id="@+id/swSplashShorten"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_marginTop="10dp"
+                         android:checked="true"
+                         android:text="缩短开屏广告倒计时（立即进入主界面）"
+                         android:textColor="@color/text_primary"
+                         android:textSize="14sp"
+                         app:trackTint="@color/primary"
+                         app:thumbTint="@color/white" />
+
+                     <androidx.appcompat.widget.SwitchCompat
+                         android:id="@+id/swNotify"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_marginTop="10dp"
+                         android:checked="true"
+                         android:text="处理完成通知"
+                         android:textColor="@color/text_primary"
+                         android:textSize="14sp"
+                         app:trackTint="@color/primary"
+                         app:thumbTint="@color/white" />
+
+<androidx.appcompat.widget.SwitchCompat
+                          android:id="@+id/swReport"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_marginTop="10dp"
+                          android:checked="true"
+                          android:text="生成处理报告（Markdown，与处理后 APK 同目录）"
+                          android:textColor="@color/text_primary"
+                          android:textSize="14sp"
+                          app:trackTint="@color/primary"
+                          app:thumbTint="@color/white" />
+
+<androidx.appcompat.widget.SwitchCompat
+                          android:id="@+id/swSignatureDefault"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_marginTop="10dp"
+                          android:checked="true"
+                          android:text="默认去除签名校验（一键杀签）"
+                          android:textColor="@color/text_primary"
+                          android:textSize="14sp"
+                          app:trackTint="@color/primary"
+                          app:thumbTint="@color/white" />
+                  </LinearLayout>
+              </com.google.android.material.card.MaterialCardView>
+
+              <!-- ★ v3.1.1 签名密钥管理 -->
+              <com.google.android.material.card.MaterialCardView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginBottom="12dp"
+                  app:cardCornerRadius="20dp"
+                  app:cardElevation="0dp"
+                  app:cardBackgroundColor="@color/bg_card"
+            app:strokeColor="@color/card_border"
+            app:strokeWidth="1dp">
+
+                  <LinearLayout
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:orientation="vertical"
+                      android:padding="16dp">
+
+                      <TextView
+                          android:id="@+id/tvKeystoreTitle"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:text="签名密钥"
+                          android:textStyle="bold"
+                          android:textSize="16sp"
+                          android:textColor="@color/text_primary" />
+
+                      <TextView
+                          android:id="@+id/tvKeystoreDesc"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:layout_marginTop="4dp"
+                          android:textSize="12sp"
+                          android:textColor="@color/text_secondary"
+                          android:text="应用随机生成专属签名密钥（v1+v2+v3 签名），可导出 p12/jks 备份或换机迁移。支持导入 p12、jks/.keystore（如 Android Studio 生成的签名文件），导入后换机重装也能覆盖安装同一签名。" />
+
+                      <TextView
+                          android:id="@+id/tvKeystoreInfo"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_marginTop="10dp"
+                          android:padding="10dp"
+                          android:background="@color/bg_input"
+                          android:textSize="12sp"
+                          android:textColor="@color/text_secondary"
+                          android:text="正在读取密钥信息…" />
+
+                      <LinearLayout
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_marginTop="10dp"
+                          android:orientation="horizontal">
+
+                          <com.google.android.material.button.MaterialButton
+                              android:id="@+id/btnExportKeystore"
+                              style="@style/Widget.Material3.Button.OutlinedButton"
+                              android:layout_width="0dp"
+                              android:layout_height="wrap_content"
+                              android:layout_weight="1"
+                              android:text="导出密钥"
+                              app:iconSize="18dp" />
+
+                          <Space
+                              android:layout_width="10dp"
+                              android:layout_height="1dp" />
+
+                          <com.google.android.material.button.MaterialButton
+                              android:id="@+id/btnImportKeystore"
+                              style="@style/Widget.Material3.Button.OutlinedButton"
+                              android:layout_width="0dp"
+                              android:layout_height="wrap_content"
+                              android:layout_weight="1"
+                              android:text="导入密钥"
+                              app:iconSize="18dp" />
+                      </LinearLayout>
+                  </LinearLayout>
+              </com.google.android.material.card.MaterialCardView>
+          </LinearLayout>
+      </ScrollView>
+  </LinearLayout>

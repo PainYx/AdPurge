@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+                                         
+        <LinearLayout
+            android:id="@+id/llBrandHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingStart="24dp"
+            android:paddingEnd="8dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="14dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvBrandTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/app_name"
+                    android:textColor="@color/text_primary"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.01" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/app_name_en"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp"
+                    android:letterSpacing="0.08" />
+            </LinearLayout>
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                app:title=""
+                app:contentInsetStartWithNavigation="0dp"
+                app:contentInsetStart="0dp"
+                app:contentInsetEnd="0dp" />
+        </LinearLayout>
+
+                       
+        <GridLayout
+            android:id="@+id/glFeatures"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:layout_marginTop="4dp"
+            android:columnCount="2"
+            android:useDefaultMargins="false"
+            android:alignmentMode="alignMargins">
+
+            <include layout="@layout/item_feature_card"
+                android:id="@+id/cardRemoveAds"
+                android:layout_width="0dp"
+                android:layout_columnWeight="1" />
+
+            <include layout="@layout/item_feature_card"
+                android:id="@+id/cardRemoveVpn"
+                android:layout_width="0dp"
+                android:layout_columnWeight="1" />
+
+            <include layout="@layout/item_feature_card"
+                android:id="@+id/cardRemoveEmulator"
+                android:layout_width="0dp"
+                android:layout_columnWeight="1" />
+
+            <include layout="@layout/item_feature_card"
+                android:id="@+id/cardPermission"
+                android:layout_width="0dp"
+                android:layout_columnWeight="1" />
+
+            <include layout="@layout/item_feature_card"
+                android:id="@+id/cardManifest"
+                android:layout_width="0dp"
+                android:layout_columnWeight="1" />
+
+            <include layout="@layout/item_feature_card"
+                android:id="@+id/cardSettings"
+                android:layout_width="0dp"
+                android:layout_columnWeight="1" />
+
+            <include layout="@layout/item_feature_card"
+                android:id="@+id/cardAppSettings"
+                android:layout_width="0dp"
+                android:layout_columnWeight="1" />
+
+            <include layout="@layout/item_feature_card"
+                android:id="@+id/cardAbout"
+                android:layout_width="0dp"
+                android:layout_columnWeight="1" />
+        </GridLayout>
+
+                      
+        <LinearLayout
+            android:id="@+id/llLogHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="处理日志"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp"
+                android:letterSpacing="0.1" />
+
+            <TextView
+                android:id="@+id/btnCopyLog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:paddingTop="7dp"
+                android:paddingBottom="7dp"
+                android:background="@drawable/bg_card_tech"
+                android:text="📋 复制日志"
+                android:textColor="@color/text_secondary"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/bg_card"
+            app:cardElevation="0dp"
+            app:strokeColor="@color/card_border"
+            app:strokeWidth="1dp">
+
+            <ScrollView
+                android:id="@+id/scrollView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true">
+
+                <TextView
+                    android:id="@+id/logView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="18dp"
+                    android:fontFamily="monospace"
+                    android:lineSpacingExtra="1dp"
+                    android:textSize="12sp"
+                    android:textColor="@color/text_secondary"
+                    android:textIsSelectable="true"
+                    android:scrollbars="vertical"
+                    android:text="点击上方“一键去广告”卡片选择 APK 开始处理。" />
+            </ScrollView>
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+
+                
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:indeterminate="false"
+        android:max="100"
+        android:visibility="gone"
+        app:indicatorColor="@color/accent"
+        app:trackColor="@color/bg_card" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

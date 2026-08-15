@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Material 3 dark tonal palette; existing names are retained for compatibility. -->
+    <color name="primary">#AFC6FF</color>
+    <color name="primary_dark">#344A71</color>
+    <color name="primary_light">#D9E2FF</color>
+    <color name="primary_container">#284164</color>
+    <color name="on_primary_container">#D9E2FF</color>
+
+    <color name="accent">#B9C7DC</color>
+    <color name="accent_dark">#3B4858</color>
+    <color name="secondary_container">#3F4858</color>
+    <color name="on_secondary_container">#D8E2F0</color>
+
+    <color name="bg_page">#101318</color>
+    <color name="bg_page_gradient_start">#15191F</color>
+    <color name="bg_page_gradient_end">#101318</color>
+    <color name="bg_card">#1B1F26</color>
+    <color name="bg_card_light">#232830</color>
+    <color name="bg_input">#1B1F26</color>
+    <color name="card_border">#444A55</color>
+
+    <color name="text_primary">#E2E2E9</color>
+    <color name="text_secondary">#C4C6CF</color>
+    <color name="text_hint">#8E9099</color>
+    <color name="text_on_primary">#162E52</color>
+
+    <color name="success">#91D5A7</color>
+    <color name="warning">#EBC16C</color>
+    <color name="danger">#FFB4AB</color>
+    <color name="danger_container">#93000A</color>
+    <color name="info">#A9C7FF</color>
+
+    <!-- Legacy aliases kept because existing Kotlin/XML references them. -->
+    <color name="purple_500">@color/primary</color>
+    <color name="purple_700">@color/primary_dark</color>
+    <color name="teal_200">@color/accent</color>
+    <color name="teal_700">@color/accent_dark</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>
